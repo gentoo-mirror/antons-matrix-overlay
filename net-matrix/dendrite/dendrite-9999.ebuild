@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit git-r3 go-module
+inherit git-r3 go-module golang-build
 # inherit golang-vcs golang-build
 
 DESCRIPTION="Matrix server written in Go"
@@ -12,12 +12,10 @@ HOMEPAGE=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="kafka sqlite postgresql"
-
-REQUIRED_USE="|| ( sqlite postgresql )"
+IUSE=""
 
 DEPEND=""
-RDEPEND="kafka? ( net-misc/kafka-bin ) postgresql? ( >=dev-db/postgresql-9.6 )"
+RDEPEND=""
 BDEPEND=""
 
 EGO_SUM=(
@@ -1147,9 +1145,28 @@ go-module_set_globals
 
 EGIT_REPO_URI="https://github.com/matrix-org/dendrite"
 SRC_URI="${EGO_SUM_SRC_URI}"
-# EGO_PN="github.com/matrix-org/dendrite/cmd/..."
+GO_IMPORTPATH="github.com/matrix-org/dendrite"
+EGO_PN="${GO_IMPORTPATH}/cmd/..."
+
+OUT_GOPATH="${S}/go-path"
 
 src_unpack() {
+	mkdir -vp "${S}/src/${GO_IMPORTPATH}"
+	# EGIT_CHECKOUT_DIR="${S}/src/${GO_IMPORTPATH}" git-r3_src_unpack || die
 	git-r3_src_unpack || die
 	go-module_src_unpack || die
+}
+
+src_compile() {
+	mkdir "${T}"/go-path
+	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo GOCACHE="${T}"/go-cache go install -v -x -work "${S}"/cmd/... || die
+	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo GOCACHE="${T}"/go-cache \
+		GOOS=js GOARCH=wasm go build -v -x -work -o bin/main.wasm "${S}"/cmd/dendritejs || die
+}
+
+src_install() {
+	local f
+	for f in $(ls "${OUT_GOPATH}/bin/") ; do
+		dobin "${OUT_GOPATH}/bin/${f}"
+	done
 }
