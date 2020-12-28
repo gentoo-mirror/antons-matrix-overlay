@@ -15,7 +15,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=""
-RDEPEND=""
+RDEPEND="acct-user/dendrite acct-group/dendrite"
 BDEPEND=""
 
 EGO_SUM=(
