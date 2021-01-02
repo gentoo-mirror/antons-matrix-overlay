@@ -32,3 +32,7 @@ RDEPEND="${DEPEND}
 BDEPEND="
 	dev-python/pyproject2setuppy[${PYTHON_USEDEP}]
 "
+
+PATCHES=(
+	"${FILESDIR}/${P}-device_lists_are_optional.patch"
+)
