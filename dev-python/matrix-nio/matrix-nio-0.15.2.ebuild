@@ -20,6 +20,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	>=dev-python/future-0.18.2-r1
 	>=dev-python/aiohttp-3.6.2-r1
 	>=dev-python/aiofiles-0.4.0
 	>=dev-python/h11-0.9.0
