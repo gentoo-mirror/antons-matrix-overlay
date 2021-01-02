@@ -19,7 +19,15 @@ KEYWORDS="~amd64 ~x86"
 # We need to define a use flag and appropriate dependencies to enable that.
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	>=dev-python/aiohttp-3.6.2-r1
+	>=dev-python/aiofiles-0.4.0
+	>=dev-python/h11-0.9.0
+	>=dev-python/hyper-h2-3.2.0
+	>=dev-python/logbook-1.5.3
+	>=dev-python/jsonschema-3.2.0
+	>=dev-python/pycryptodome-3.9.7"
+# Missing: unpaddedbase64 >= 1.1.0
 BDEPEND="
 	dev-python/pyproject2setuppy[${PYTHON_USEDEP}]
 "
