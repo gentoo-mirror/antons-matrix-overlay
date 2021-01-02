@@ -19,6 +19,6 @@ KEYWORDS="~amd64 ~x86"
 # TODO: the package optionally supports end-to-end encryption.
 # We need to define a use flag and appropriate dependencies to enable that.
 
-DEPEND="dev-pyton/matrix-nio"
+DEPEND="dev-python/matrix-nio"
 RDEPEND="${DEPEND}"
 BDEPEND=""
