@@ -12,11 +12,12 @@ command_user="dendrite:dendrite"
 command_args="${DENDRITE_OPTS} -config ${DENDRITE_CONFIG}"
 
 checkconfig() {
-	test f "${DENDRITE_CONFIG}" || {
+	test -f "${DENDRITE_CONFIG}" || {
 		echo "\"${DENDRITE_CONFIG}\" does not exist or is not a regular file." >&2
 		echo "Please, look at https://github.com/matrix-org/dendrite for instructions" >&2
 		echo "on how to configure your dendrite instance, and use" >&2
 		echo "\"${DENDRITE_CONFIDR}/dendrite-config-example.yaml\" as an example." >&2
+		return 1
 	}
 }
 
