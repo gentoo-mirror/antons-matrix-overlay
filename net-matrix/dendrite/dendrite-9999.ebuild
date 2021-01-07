@@ -1169,4 +1169,9 @@ src_install() {
 	for f in $(ls "${OUT_GOPATH}/bin/") ; do
 		dobin "${OUT_GOPATH}/bin/${f}"
 	done
+
+	dodir "${EPREFIX}/etc/dendrite"
+	newins "${S}/dendrite-config.yaml" "${EPREFIX}/etc/dendrite/dendrite-config-example.yaml"
+	newinitd "${FILESDIR}"/dendrite.initd dendrite
+	newconfd "${FILESDIR}"/dendrite.confd dendrite
 }

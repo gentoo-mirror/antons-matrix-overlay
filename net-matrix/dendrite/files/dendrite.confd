@@ -1,0 +1,4 @@
+# Specify the network service that corresponds to the "bind" setting
+# in your configuration file. For example, if you bind to 127.0.0.1,
+# this should be set to "loopback" which provides the loopback interface.
+rc_need="loopback"
