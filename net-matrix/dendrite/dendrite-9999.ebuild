@@ -1171,7 +1171,8 @@ src_install() {
 	done
 
 	dodir "${EPREFIX}/etc/dendrite"
-	newins "${S}/dendrite-config.yaml" "${EPREFIX}/etc/dendrite/dendrite-config-example.yaml"
+	insinto /etc/dendrite
+	newins "${S}/dendrite-config.yaml" "dendrite-config-example.yaml"
 	newinitd "${FILESDIR}"/dendrite.initd dendrite
 	newconfd "${FILESDIR}"/dendrite.confd dendrite
 }
