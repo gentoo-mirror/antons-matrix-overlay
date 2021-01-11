@@ -1175,4 +1175,7 @@ src_install() {
 	newins "${S}/dendrite-config.yaml" "dendrite-config-example.yaml"
 	newinitd "${FILESDIR}"/dendrite.initd dendrite
 	newconfd "${FILESDIR}"/dendrite.confd dendrite
+
+	keepdir "${EPREFIX}/var/log/dendrite"
+	fowners dendrite:dendrite "${EPREFIX}/var/log/dendrite"
 }
