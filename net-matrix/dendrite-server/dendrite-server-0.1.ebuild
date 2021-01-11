@@ -3,6 +3,8 @@
 
 EAPI=7
 
+inherit git-r3
+
 DESCRIPTION="Installs a typical configuration of dendrite."
 HOMEPAGE="https://gitlab.com/anton.molyboha/dendrite-server"
 # SRC_URI=""
@@ -24,7 +26,7 @@ RDEPEND="
 BDEPEND="sys-devel/m4 sys-apps/util-linux"
 
 src_compile() {
-	make -DPREFIX="${EPREFIX}" all
+	make PREFIX="${EPREFIX}" all
 }
 
 src_install() {
