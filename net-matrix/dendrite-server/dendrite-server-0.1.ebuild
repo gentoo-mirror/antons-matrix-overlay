@@ -22,7 +22,8 @@ RDEPEND="
 	www-servers/nginx
 	app-crypt/certbot-nginx
 	sys-devel/m4
-	sys-apps/util-linux"
+	sys-apps/util-linux
+	app-admin/sudo"
 BDEPEND="sys-devel/m4 sys-apps/util-linux"
 
 src_compile() {
