@@ -33,7 +33,8 @@ src_install() {
 	insinto /opt/${PN}
 	doins dendrite.yaml.template
 	doins nginx.conf.template
-	doins dendrite-server-autoconfig.sh
+	into /opt/${PN}
+	dobin dendrite-server-autoconfig.sh
 }
 
 pkg_config() {
