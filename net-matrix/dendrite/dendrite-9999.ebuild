@@ -4,7 +4,6 @@
 EAPI=7
 
 inherit git-r3 go-module golang-build
-# inherit golang-vcs golang-build
 
 DESCRIPTION="Matrix server written in Go"
 HOMEPAGE=""
@@ -588,8 +587,8 @@ EGO_SUM=(
 	"github.com/matrix-org/gomatrix v0.0.0-20190528120928-7df988a63f26/go.mod"
 	"github.com/matrix-org/gomatrix v0.0.0-20200827122206-7dd5e2a05bcd"
 	"github.com/matrix-org/gomatrix v0.0.0-20200827122206-7dd5e2a05bcd/go.mod"
-	"github.com/matrix-org/gomatrixserverlib v0.0.0-20210113173004-b1c67ac867cc"
-	"github.com/matrix-org/gomatrixserverlib v0.0.0-20210113173004-b1c67ac867cc/go.mod"
+	"github.com/matrix-org/gomatrixserverlib v0.0.0-20210122154608-a38974bd8a37"
+	"github.com/matrix-org/gomatrixserverlib v0.0.0-20210122154608-a38974bd8a37/go.mod"
 	"github.com/matrix-org/naffka v0.0.0-20200901083833-bcdd62999a91"
 	"github.com/matrix-org/naffka v0.0.0-20200901083833-bcdd62999a91/go.mod"
 	"github.com/matrix-org/util v0.0.0-20190711121626-527ce5ddefc7"
@@ -831,13 +830,12 @@ EGO_SUM=(
 	"github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07/go.mod"
 	"github.com/tidwall/gjson v1.6.0"
 	"github.com/tidwall/gjson v1.6.0/go.mod"
-	"github.com/tidwall/gjson v1.6.1/go.mod"
-	"github.com/tidwall/gjson v1.6.3"
-	"github.com/tidwall/gjson v1.6.3/go.mod"
+	"github.com/tidwall/gjson v1.6.7"
+	"github.com/tidwall/gjson v1.6.7/go.mod"
 	"github.com/tidwall/match v1.0.1"
 	"github.com/tidwall/match v1.0.1/go.mod"
-	"github.com/tidwall/match v1.0.2"
-	"github.com/tidwall/match v1.0.2/go.mod"
+	"github.com/tidwall/match v1.0.3"
+	"github.com/tidwall/match v1.0.3/go.mod"
 	"github.com/tidwall/pretty v1.0.0/go.mod"
 	"github.com/tidwall/pretty v1.0.1"
 	"github.com/tidwall/pretty v1.0.1/go.mod"
@@ -845,8 +843,8 @@ EGO_SUM=(
 	"github.com/tidwall/pretty v1.0.2/go.mod"
 	"github.com/tidwall/sjson v1.0.3"
 	"github.com/tidwall/sjson v1.0.3/go.mod"
-	"github.com/tidwall/sjson v1.1.2"
-	"github.com/tidwall/sjson v1.1.2/go.mod"
+	"github.com/tidwall/sjson v1.1.4"
+	"github.com/tidwall/sjson v1.1.4/go.mod"
 	"github.com/uber/jaeger-client-go v2.25.0+incompatible"
 	"github.com/uber/jaeger-client-go v2.25.0+incompatible/go.mod"
 	"github.com/uber/jaeger-lib v2.2.0+incompatible"
@@ -927,8 +925,8 @@ EGO_SUM=(
 	"golang.org/x/crypto v0.0.0-20200423211502-4bdfaf469ed5/go.mod"
 	"golang.org/x/crypto v0.0.0-20200510223506-06a226fb4e37"
 	"golang.org/x/crypto v0.0.0-20200510223506-06a226fb4e37/go.mod"
-	"golang.org/x/crypto v0.0.0-20201117144127-c1f2f97bffc9"
-	"golang.org/x/crypto v0.0.0-20201117144127-c1f2f97bffc9/go.mod"
+	"golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad"
+	"golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad/go.mod"
 	"golang.org/x/exp v0.0.0-20190121172915-509febef88a4/go.mod"
 	"golang.org/x/lint v0.0.0-20180702182130-06c8688daad7/go.mod"
 	"golang.org/x/lint v0.0.0-20181026193005-c67002cb31c3/go.mod"
@@ -1017,8 +1015,8 @@ EGO_SUM=(
 	"golang.org/x/sys v0.0.0-20200323222414-85ca7c5b95cd/go.mod"
 	"golang.org/x/sys v0.0.0-20200615200032-f1bc736245b1"
 	"golang.org/x/sys v0.0.0-20200615200032-f1bc736245b1/go.mod"
-	"golang.org/x/sys v0.0.0-20201119102817-f84b799fce68"
-	"golang.org/x/sys v0.0.0-20201119102817-f84b799fce68/go.mod"
+	"golang.org/x/sys v0.0.0-20210119212857-b64e53b001e4"
+	"golang.org/x/sys v0.0.0-20210119212857-b64e53b001e4/go.mod"
 	"golang.org/x/term v0.0.0-20201117132131-f5c789dd3221/go.mod"
 	"golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c/go.mod"
 	"golang.org/x/text v0.3.0/go.mod"
@@ -1151,8 +1149,6 @@ EGO_PN="${GO_IMPORTPATH}/cmd/..."
 OUT_GOPATH="${S}/go-path"
 
 src_unpack() {
-	mkdir -vp "${S}/src/${GO_IMPORTPATH}"
-	# EGIT_CHECKOUT_DIR="${S}/src/${GO_IMPORTPATH}" git-r3_src_unpack || die
 	git-r3_src_unpack || die
 	go-module_src_unpack || die
 }

@@ -3,7 +3,18 @@
 : ${DENDRITE_CONFDIR:=${RC_PREFIX%/}/etc/dendrite}
 : ${DENDRITE_CONFIG:=${DENDRITE_CONFDIR}/dendrite.yaml}
 : ${DENDRITE_PIDFILE:=${RC_PREFIX%/}/run/${SVCNAME}.pid}
-: ${DENDRITE_BINARY:=${RC_PREFIX%/}/usr/bin/dendrite-monolith-server}
+
+if [ -n "${DENDRITE_BINARY}" ] ; then
+	: # Do nothing, DENDRITE_BINARY is set externally.
+elif [ -z "${DENDRITE_MODE}" -o "${DENDRITE_MODE}" == "monolith" ] ; then
+	DENDRITE_BINARY=${RC_PREFIX%/}/usr/bin/dendrite-monolith-server
+elif [ "${DENDRITE_MODE}" == "polylith" ] ; then
+	DENDRITE_BINARY:=${RC_PREFIX%/}/usr/bin/dendrite-polylith-multi
+else
+	echo "Unknown dendrite mode: \"${DENDRITE_MODE}\"." >&2
+	echo "Check the DENDRITE_MODE variable in ${RC_PREFIX%/}/etc/conf.d/dendrite" >&2
+	exit 1
+fi
 
 command="${DENDRITE_BINARY}"
 pidfile="${DENDRITE_PIDFILE}"
