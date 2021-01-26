@@ -1154,10 +1154,16 @@ src_unpack() {
 }
 
 src_compile() {
-	mkdir "${T}"/go-path
+	# mkdir "${T}"/go-path
 	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo GOCACHE="${T}"/go-cache go install -trimpath -v -x -work "${S}"/cmd/... || die
 	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo GOCACHE="${T}"/go-cache \
 		GOOS=js GOARCH=wasm go build -trimpath -v -x -work -o bin/main.wasm "${S}"/cmd/dendritejs || die
+}
+
+src_test() {
+	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo GOCACHE="${T}"/go-cache go test -trimpath -v -x -work "${S}"/cmd/... || die
+	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo GOCACHE="${T}"/go-cache \
+		GOOS=js GOARCH=wasm go test -trimpath -v -x -work "${S}"/cmd/dendritejs || die
 }
 
 src_install() {
