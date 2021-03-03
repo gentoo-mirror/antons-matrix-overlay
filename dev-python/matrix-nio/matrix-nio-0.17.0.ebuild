@@ -28,7 +28,8 @@ RDEPEND="${DEPEND}
 	>=dev-python/logbook-1.5.3
 	>=dev-python/jsonschema-3.2.0
 	>=dev-python/pycryptodome-3.9.7
-	>=dev-python/unpaddedbase64-1.1.0"
+	>=dev-python/unpaddedbase64-1.1.0
+	>=dev-python/aiohttp-socks-0.5.5"
 BDEPEND="
 	dev-python/pyproject2setuppy[${PYTHON_USEDEP}]
 "
