@@ -543,4 +543,5 @@ src_install() {
 	ewarn ""
 	ewarn "The example configuration file can be found at"
 	ewarn "\"${EPREFIX}/etc/matrix-skype/example-config.yaml\""
+	ewarn ""
 }
