@@ -1,0 +1,12 @@
+# Specify the network service that corresponds to the "bind" setting
+# in your configuration file. For example, if you bind to 127.0.0.1,
+# this should be set to "loopback" which provides the loopback interface.
+rc_need="loopback"
+
+# If your configuration of matrix-skype uses locally running PostgreSQL,
+# you may want to uncomment the next line
+# rc_need="${rc_need} postgresql"
+
+# If you use nginx as a reverse proxy for your matrix-skype bot,
+# you may want to uncomment the next line
+# rc_need="${rc_need} nginx"

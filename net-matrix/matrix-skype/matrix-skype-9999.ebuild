@@ -15,7 +15,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="dev-libs/olm"
-RDEPEND="dev-libs/olm"
+RDEPEND="dev-libs/olm acct-user/matrix-skype acct-group/matrix-skype"
 BDEPEND=""
 
 EGO_SUM=(
@@ -531,11 +531,16 @@ src_install() {
 	dobin matrix-skype
 	insinto /etc/matrix-skype
 	doins example-config.yaml
-	einfo "The matrix-skype bridge is based on mautrix-whatsapp. The"
-	einfo "configuration instructions should be adapted from the instructions"
-	einfo "for mautrix-whatsapp, see:"
-	einfo "https://docs.mau.fi/bridges/go/whatsapp/setup/index.html"
-	einfo ""
-	einfo "The example configuration file can be found at"
-	einfo "\"${EPREFIX}/etc/matrix-skype/example-config.yaml\""
+	keepdir "${EPREFIX}/var/log/matrix-skype"
+	fowners matrix-skype:matrix-skype "${EPREFIX}/var/log/matrix-skype"
+	newinitd "${FILESDIR}/matrix-skype.initd" matrix-skype
+	newconfd "${FILESDIR}/matrix-skype.confd" matrix-skype
+
+	ewarn "The matrix-skype bridge is based on mautrix-whatsapp. The"
+	ewarn "configuration instructions should be adapted from the instructions"
+	ewarn "for mautrix-whatsapp, see:"
+	ewarn "https://docs.mau.fi/bridges/go/whatsapp/setup/index.html"
+	ewarn ""
+	ewarn "The example configuration file can be found at"
+	ewarn "\"${EPREFIX}/etc/matrix-skype/example-config.yaml\""
 }

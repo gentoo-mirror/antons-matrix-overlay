@@ -1,0 +1,43 @@
+#!/sbin/openrc-run
+
+: ${MATRIX_SKYPE_CONFDIR:=${RC_PREFIX%/}/etc/matrix-skype}
+: ${MATRIX_SKYPE_CONFIG:=${MATRIX_SKYPE_CONFDIR}/config.yaml}
+: ${MATRIX_SKYPE_PIDFILE:=${RC_PREFIX%/}/run/${SVCNAME}.pid}
+
+command="${RC_PREFIX%/}/usr/bin/matrix-skype"
+pidfile="${MATRIX_SKYPE_PIDFILE}"
+command_background=true
+command_user="matrix-skype:matrix-skype"
+command_args="${MATRIX_SKYPE_OPTS} -c ${MATRIX_SKYPE_CONFIG}"
+
+checkconfig() {
+	test -f "${MATRIX_SKYPE_CONFIG}" || {
+		echo "\"${MATRIX_SKYPE_CONFIG}\" does not exist or is not a regular file." >&2
+		echo "Please, look at https://github.com/kelaresg/go-skype-bridge and" >&2
+		echo "https://docs.mau.fi/bridges/go/whatsapp/setup/index.html for instructions" >&2
+		echo "on how to configure your matrix-skype bridge, and use" >&2
+		echo "\"${MATRIX_SKYPE_CONFDIR}/example-config.yaml\" as an example." >&2
+		return 1
+	}
+}
+
+start_pre() {
+	# If this isn't a restart, make sure that the user's config isn't
+	# busted before we try to start the daemon (this will produce
+	# better error messages than if we just try to start it blindly).
+	#
+	# If, on the other hand, this *is* a restart, then the stop_pre
+	# action will have ensured that the config is usable and we don't
+	# need to do that again.
+	if [ "${RC_CMD}" != "restart" ] ; then
+		checkconfig || return $?
+	fi
+}
+
+stop_pre() {
+	# If this is a restart, check to make sure the user's config
+	# isn't busted before we stop the running daemon.
+	if [ "${RC_CMD}" = "restart" ] ; then
+		checkconfig || return $?
+	fi
+}
