@@ -181,6 +181,8 @@ EGO_SUM=(
     "github.com/kelaresg/go-skypeapi v0.1.2-0.20201211120317-8651f9f08575/go.mod"
     "github.com/kelaresg/go-skypeapi v0.1.2-0.20210120095455-33c3f50415c4"
     "github.com/kelaresg/go-skypeapi v0.1.2-0.20210120095455-33c3f50415c4/go.mod"
+    "github.com/kelaresg/go-skypeapi v0.1.2-0.20210128115834-086b2e03dd09"
+    "github.com/kelaresg/go-skypeapi v0.1.2-0.20210128115834-086b2e03dd09/go.mod"
     "github.com/kisielk/errcheck v1.1.0/go.mod"
     "github.com/kisielk/gotool v1.0.0/go.mod"
     "github.com/kkdai/bstream v0.0.0-20161212061736-f391b8402d23/go.mod"
@@ -343,7 +345,7 @@ EGO_SUM=(
     "golang.org/x/image v0.0.0-20190802002840-cff245a6509b/go.mod"
     "golang.org/x/image v0.0.0-20200430140353-33d19683fad8"
     "golang.org/x/image v0.0.0-20200430140353-33d19683fad8/go.mod"
-	"golang.org/x/image v0.0.0-20200618115811-c13761719519"
+    "golang.org/x/image v0.0.0-20200618115811-c13761719519"
     "golang.org/x/image v0.0.0-20200618115811-c13761719519/go.mod"
     "golang.org/x/lint v0.0.0-20181026193005-c67002cb31c3/go.mod"
     "golang.org/x/lint v0.0.0-20190227174305-5b3e6a55c961/go.mod"
@@ -517,13 +519,23 @@ src_unpack() {
 }
 
 src_compile() {
-	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo GOCACHE="${T}"/go-cache go build -trimpath -v -x -work "${S}" || die
+	# CGO_CFLAGS="-Wno-return-local-addr" is a workaround for https://github.com/mattn/go-sqlite3/issues/822
+	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo CGO_CFLAGS="${CGO_CFLAGS} -Wno-return-local-addr" GOCACHE="${T}"/go-cache go build -trimpath -v -x -work "${S}" || die "Exit code $?"
 }
 
 src_test() {
-	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo GOCACHE="${T}"/go-cache go test -trimpath -v -x -work "${S}" || die
+	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo CGO_CFLAGS="-Wno-return-local-addr" GOCACHE="${T}"/go-cache go test -trimpath -v -x -work "${S}" || die
 }
 
 src_install() {
 	dobin matrix-skype
+	insinto /etc/matrix-skype
+	doins example-config.yaml
+	einfo "The matrix-skype bridge is based on mautrix-whatsapp. The"
+	einfo "configuration instructions should be adapted from the instructions"
+	einfo "for mautrix-whatsapp, see:"
+	einfo "https://docs.mau.fi/bridges/go/whatsapp/setup/index.html"
+	einfo ""
+	einfo "The example configuration file can be found at"
+	einfo "\"${EPREFIX}/etc/matrix-skype/example-config.yaml\""
 }
