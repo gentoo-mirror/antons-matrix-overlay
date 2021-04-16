@@ -524,7 +524,7 @@ src_compile() {
 }
 
 src_test() {
-	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo CGO_CFLAGS="-Wno-return-local-addr" GOCACHE="${T}"/go-cache go test -trimpath -v -x -work "${S}" || die
+	env GOPATH="${OUT_GOPATH}":/usr/lib/go-gentoo CGO_CFLAGS="${CGO_CFLAGS} -Wno-return-local-addr" GOCACHE="${T}"/go-cache go test -trimpath -v -x -work "${S}" || die
 }
 
 src_install() {
