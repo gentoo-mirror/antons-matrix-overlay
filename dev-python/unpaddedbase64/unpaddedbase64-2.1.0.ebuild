@@ -4,6 +4,7 @@
 EAPI=7
 
 PYTHON_COMPAT=( python3_{6,7,8,9} )
+DISTUTILS_USE_SETUPTOOLS="pyproject.toml"
 inherit distutils-r1
 
 DESCRIPTION="Encode and decode Base64 without \"=\" padding."
@@ -19,4 +20,6 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
+BDEPEND="
+	dev-python/pyproject2setuppy[${PYTHON_USEDEP}]
+"
