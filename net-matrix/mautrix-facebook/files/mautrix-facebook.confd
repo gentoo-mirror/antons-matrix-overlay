@@ -1,0 +1,10 @@
+rc_need="net-online"
+
+# If your configuration of mautrix-facebook uses locally
+# running PostgreSQL you may want to uncomment the next line
+# rc_need="${rc_need} postgresql"
+
+# If your configuration of mautrix-facebook connects to
+# locally running dendrite you may want to uncomment the
+# next line
+# rc_need="${rc_need} dendrite"

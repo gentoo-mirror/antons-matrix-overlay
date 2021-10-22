@@ -48,4 +48,7 @@ src_install() {
 	distutils-r1_src_install
 	insinto "/etc/${PN}"
 	doins mautrix_facebook/example-config.yaml
+
+	newconfd "${FILESDIR}/mautrix-facebook.confd" mautrix-facebook
+	newinitd "${FILESDIR}/mautrix-facebook.initd" mautrix-facebook
 }

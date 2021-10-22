@@ -1,0 +1,45 @@
+#!/sbin/openrc-run
+
+: ${BRIDGE_CONFDIR:=${RC_PREFIX%/}/etc/mautrix-facebook}
+: ${BRIDGE_CONFIG:=${BRIDGE_CONFDIR}/config.yaml}
+: ${BRIDGE_PIDFILE:=${RC_PREFIX%/}/run/${SVCNAME}.pid}
+
+command="python"
+pidfile="${BRIDGE_PIDFILE}"
+command_background=true
+command_user="mautrix-facebook:mautrix-facebook"
+command_args="-m mautrix_facebook ${BRIDGE_OPTS} -c ${BRIDGE_CONFIG}"
+
+checkconfig() {
+	test -f "${BRIDGE_CONFIG}" || {
+		echo "\"${BRIDGE_CONFIG}\" does not exist or is not a regular file." >&2
+		echo "Please, look at" >&2
+		echo "https://docs.mau.fi/bridges/python/setup/index.html?bridge=facebook" >&2
+		echo "for instructions on how to configure your bridge." >&2
+		echo "Skip steps 1 and 2 (the program has already been installed by portage)" >&2
+		echo "and use \"${PREFIX}/etc/mautrix-facebook/example-config.yaml\" as an" >&2
+		echo "example config." >&2
+		return 1
+	}
+}
+
+start_pre() {
+	# If this isn't a restart, make sure that the user's config isn't
+	# busted before we try to start the daemon (this will produce
+	# better error messages than if we just try to start it blindly).
+	#
+	# If, on the other hand, this *is* a restart, then the stop_pre
+	# action will have ensured that the config is usable and we don't
+	# need to do that again.
+	if [ "${RC_CMD}" != "restart" ] ; then
+		checkconfig || return $?
+	fi
+}
+
+stop_pre() {
+	# If this is a restart, check to make sure the user's config
+	# isn't busted before we stop the running daemon.
+	if [ "${RC_CMD}" = "restart" ] ; then
+		checkconfig || return $?
+	fi
+}
