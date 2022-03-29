@@ -2109,4 +2109,7 @@ src_install() {
 
 	keepdir "/var/log/dendrite"
 	fowners dendrite:dendrite "/var/log/dendrite"
+
+	einfo "If you are upgrading from dendrite 0.5.X or earlier, you may need to update your config to the new format."
+	einfo "See ${EPREFIX}/etc/dendrite/dendrite-config-example.yaml for an example."
 }
