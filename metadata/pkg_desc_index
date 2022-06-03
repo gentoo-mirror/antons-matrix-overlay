@@ -9,7 +9,7 @@ dev-python/asyncpg 0.23.0: A fast PostgreSQL Database Client Library for Python/
 dev-python/matrix-nio 0.15.2 0.16.0 0.17.0 0.18.7: A Python Matrix client library, designed according to sans I/O principles.
 dev-python/mautrix 0.10.10 0.15.4: A Python 3 asyncio Matrix framework.
 dev-python/unpaddedbase64 1.1.0 2.1.0: Encode and decode Base64 without "=" padding.
-net-matrix/dendrite 0.3.6 0.3.7 0.3.8 0.3.9 0.3.10 0.3.11 0.3.11.20210414 0.5.1 0.6.3 0.8.1 0.8.5: Matrix server written in Go
+net-matrix/dendrite 0.3.6 0.3.7 0.3.8 0.3.9 0.3.10 0.3.11 0.3.11.20210414 0.5.1 0.6.3 0.8.1 0.8.5 0.8.7: Matrix server written in Go
 net-matrix/dendrite-server 0.1: Installs a typical configuration of dendrite.
 net-matrix/matrix-skype 0.0.0.20211027 0.0.0.20220411: A Matrix-Skype puppeting bridge
 net-matrix/mautrix-facebook 0.3.1 0.3.3: A Matrix-Facebook Messenger puppeting bridge.
