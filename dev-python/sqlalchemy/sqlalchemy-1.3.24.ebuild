@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( pypy3 python3_{7..9} )
+PYTHON_COMPAT=( pypy3 python3_{7..10} )
 PYTHON_REQ_USE="sqlite?"
 
 inherit distutils-r1 multiprocessing optfeature
@@ -55,6 +55,9 @@ python_install_all() {
 }
 
 pkg_postinst() {
+	if use python_targets_python3_10 ; then
+		ewarn "Python 3.10 is not officially supported by upstream. Use at your own risk."
+	fi
 	optfeature "MySQL support" dev-python/mysqlclient dev-python/pymysql \
 		dev-python/mysql-connector-python
 	optfeature "mssql support" dev-python/pymssql
