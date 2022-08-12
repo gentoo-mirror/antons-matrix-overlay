@@ -11,7 +11,7 @@ DESCRIPTION="A plugin-based Matrix bot system."
 HOMEPAGE="https://github.com/maubot/maubot"
 SRC_URI="https://github.com/maubot/maubot/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="AGPL-3.0"
+LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
