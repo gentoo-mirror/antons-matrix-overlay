@@ -48,4 +48,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-
+PATCHES=(
+	"${FILESDIR}"/maubot_ignore_example_config_in_package_data-${PV}.patch
+)
