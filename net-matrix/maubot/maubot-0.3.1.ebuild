@@ -56,4 +56,7 @@ src_install() {
 	distutils-r1_src_install
 	insinto "/etc/${PN}"
 	doins maubot/example-config.yaml
+
+	newconfd "${FILESDIR}/${PN}.confd" "${PN}"
+	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
 }
