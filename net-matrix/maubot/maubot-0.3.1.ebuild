@@ -51,3 +51,9 @@ BDEPEND=""
 PATCHES=(
 	"${FILESDIR}"/maubot_ignore_example_config_in_package_data-${PV}.patch
 )
+
+src_install() {
+	distutils-r1_src_install
+	insinto "/etc/${PN}"
+	doins maubot/example-config.yaml
+}
