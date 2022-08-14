@@ -6,7 +6,7 @@ EAPI=8
 inherit acct-user
 
 DESCRIPTION="The user to run net-matrix/maubot as."
-ACCT_USER_ID=
+ACCT_USER_ID=-1
 ACCT_USER_GROUPS=( maubot )
 
 acct-user_add_deps

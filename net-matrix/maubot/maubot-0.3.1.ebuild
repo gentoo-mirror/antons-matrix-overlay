@@ -16,6 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="
+	acct-user/maubot
 	>=dev-python/mautrix-0.15.5
 	<dev-python/mautrix-0.16.0
 	>=dev-python/aiohttp-3.0.0
