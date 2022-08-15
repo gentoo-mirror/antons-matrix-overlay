@@ -9,7 +9,10 @@ inherit distutils-r1
 
 DESCRIPTION="A plugin-based Matrix bot system."
 HOMEPAGE="https://github.com/maubot/maubot"
-SRC_URI="https://github.com/maubot/maubot/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="
+	https://github.com/maubot/maubot/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	https://registry.yarnpkg.com/react-scripts/-/react-scripts-5.0.1.tgz
+"
 
 LICENSE="AGPL-3"
 SLOT="0"
@@ -61,6 +64,7 @@ python_compile() {
 		cd maubot/management/frontend
 		yarn config set disable-self-update-check true || die
 		yarn config set yarn-offline-mirror "${DISTDIR}" || die
+		yarn --offline --frozen-lockfile || die
 		yarn --offline --frozen-lockfile build || die
 	) || die
 }
