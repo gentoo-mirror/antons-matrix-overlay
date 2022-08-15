@@ -11,7 +11,15 @@ DESCRIPTION="A plugin-based Matrix bot system."
 HOMEPAGE="https://github.com/maubot/maubot"
 SRC_URI="
 	https://github.com/maubot/maubot/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	https://registry.yarnpkg.com/react/-/react-17.0.2.tgz
+	https://registry.yarnpkg.com/react-ace/-/react-ace-9.4.1.tgz
+	https://registry.yarnpkg.com/react-contextmenu/-/react-contextmenu-2.14.0.tgz
+	https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz
+	https://registry.yarnpkg.com/react-json-tree/-/react-json-tree-0.16.1.tgz
+	https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.3.0.tgz
 	https://registry.yarnpkg.com/react-scripts/-/react-scripts-5.0.1.tgz
+	https://registry.yarnpkg.com/react-select/-/react-select-5.2.1.tgz
+	https://registry.yarnpkg.com/sass/-/sass-1.34.1.tgz
 "
 
 LICENSE="AGPL-3"
