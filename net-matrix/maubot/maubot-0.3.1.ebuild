@@ -47,11 +47,23 @@ DEPEND="
 	<dev-python/jinja-4.0.0
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
+BDEPEND="
+	sys-apps/yarn
+"
 
 PATCHES=(
 	"${FILESDIR}"/maubot_ignore_example_config_in_package_data-${PV}.patch
 )
+
+python_compile() {
+	distutils-r1_python_compile
+	(
+		cd maubot/management/frontend
+		yarn config set disable-self-update-check true || die
+		yarn config set yarn-offline-mirror "${DISTDIR}" || die
+		yarn --offline --frozen-lockfile build || die
+	) || die
+}
 
 src_install() {
 	distutils-r1_src_install
