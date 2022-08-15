@@ -4,15 +4,15 @@
 : ${MAUBOT_CONFIG:=${MAUBOT_CONFDIR}/config.yaml}
 : ${MAUBOT_PIDFILE:=${RC_PREFIX%/}/run/${SVCNAME}.pid}
 
-command="python3 -m maubot"
+command="${RC_PREFIX%/}/usr/bin/python3"
 pidfile="${MAUBOT_PIDFILE}"
 command_background=true
 command_user="maubot:maubot"
-command_args="${MAUBOT_OPTS} -config \"${MAUBOT_CONFIG}\""
+command_args="-m maubot ${MAUBOT_OPTS} --config \"${MAUBOT_CONFIG}\""
 
 case "${MAUBOT_AUTOUPDATE_CONFIG}" in
 	yes | Yes | YES | true | True | TRUE | 1 )
-		command_args="${command_args} --base_config \"${RC_PREFIX%/}/etc/maubot/example-config.yaml\""
+		command_args="${command_args} --base-config \"${RC_PREFIX%/}/etc/maubot/example-config.yaml\""
 		;;
 	* )
 		command_args="${command_args} --no-update"
