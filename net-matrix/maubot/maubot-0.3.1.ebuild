@@ -16,10 +16,23 @@ SRC_URI="
 	https://registry.yarnpkg.com/react-contextmenu/-/react-contextmenu-2.14.0.tgz
 	https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz
 	https://registry.yarnpkg.com/react-json-tree/-/react-json-tree-0.16.1.tgz
+
 	https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.3.0.tgz
 	https://registry.yarnpkg.com/react-scripts/-/react-scripts-5.0.1.tgz
 	https://registry.yarnpkg.com/react-select/-/react-select-5.2.1.tgz
 	https://registry.yarnpkg.com/sass/-/sass-1.34.1.tgz
+	https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.1.0.tgz
+	https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz
+	https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.4.12.tgz
+	https://registry.yarnpkg.com/diff-match-patch/-/diff-match-patch-1.0.4.tgz
+	https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz
+	https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz
+	https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz
+	https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz
+	https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz
+	https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.7.tgz -> @babel-runtime-7.16.7.tgz
+	https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz -> @types-prop-types-15.7.4.tgz
+	https://registry.yarnpkg.com/react-base16-styling/-/react-base16-styling-0.9.1.tgz
 "
 
 LICENSE="AGPL-3"
