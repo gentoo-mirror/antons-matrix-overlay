@@ -21,7 +21,7 @@ SRC_URI="
 	https://registry.yarnpkg.com/react-scripts/-/react-scripts-5.0.1.tgz
 	https://registry.yarnpkg.com/react-select/-/react-select-5.2.1.tgz
 	https://registry.yarnpkg.com/sass/-/sass-1.34.1.tgz
-	https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.1.0.tgz
+	https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz
 	https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz
 	https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.4.12.tgz
 	https://registry.yarnpkg.com/diff-match-patch/-/diff-match-patch-1.0.4.tgz
