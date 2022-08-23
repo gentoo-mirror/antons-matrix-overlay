@@ -16,8 +16,8 @@ SRC_URI="
 	https://registry.yarnpkg.com/react-contextmenu/-/react-contextmenu-2.14.0.tgz
 	https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz
 	https://registry.yarnpkg.com/react-json-tree/-/react-json-tree-0.16.1.tgz
-
 	https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.3.0.tgz
+
 	https://registry.yarnpkg.com/react-scripts/-/react-scripts-5.0.1.tgz
 	https://registry.yarnpkg.com/react-select/-/react-select-5.2.1.tgz
 	https://registry.yarnpkg.com/sass/-/sass-1.34.1.tgz
@@ -33,6 +33,10 @@ SRC_URI="
 	https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.7.tgz -> @babel-runtime-7.16.7.tgz
 	https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz -> @types-prop-types-15.7.4.tgz
 	https://registry.yarnpkg.com/react-base16-styling/-/react-base16-styling-0.9.1.tgz
+	https://registry.yarnpkg.com/history/-/history-4.9.0.tgz
+	https://registry.yarnpkg.com/react-router/-/react-router-5.2.1.tgz
+	https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.0.2.tgz
+	https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.0.tgz
 "
 
 LICENSE="AGPL-3"
