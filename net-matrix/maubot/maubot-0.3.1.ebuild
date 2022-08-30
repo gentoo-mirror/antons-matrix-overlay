@@ -1202,6 +1202,8 @@ SRC_URI="
 	https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz
 	https://registry.yarnpkg.com/ast-types-flow/-/ast-types-flow-0.0.7.tgz
 	https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.4.tgz
+
+	https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.4.14.tgz
 "
 
 LICENSE="AGPL-3"
