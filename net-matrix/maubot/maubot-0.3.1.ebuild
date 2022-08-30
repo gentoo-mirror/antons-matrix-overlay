@@ -1248,6 +1248,10 @@ PATCHES=(
 	"${FILESDIR}"/maubot_ignore_example_config_in_package_data-${PV}.patch
 )
 
+src_unpack() {
+	unpack ${P}.tar.gz
+}
+
 python_compile() {
 	distutils-r1_python_compile
 	(
