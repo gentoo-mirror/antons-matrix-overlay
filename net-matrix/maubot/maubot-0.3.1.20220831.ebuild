@@ -5,12 +5,18 @@ EAPI=8
 
 DISTUTILS_USE_PEP17=setuptools
 PYTHON_COMPAT=( python3_{9..10} )
+# We do not use `git-r3` eclass because GitHub allows us
+# to download the archive for a specific commit directly.
+# If you want to change this ebuild to use `git-r3` eclass,
+# remember to remove the package archive from SRC_URI
+# and to update the definition of ${S} below.
+GIT_COMMIT=d574f84079c2469b71e6c09c4b804e8bf6156153
 inherit distutils-r1
 
 DESCRIPTION="A plugin-based Matrix bot system."
 HOMEPAGE="https://github.com/maubot/maubot"
 SRC_URI="
-	https://github.com/maubot/maubot/archive/d574f84079c2469b71e6c09c4b804e8bf6156153.tar.gz -> ${P}.tar.gz
+	https://github.com/maubot/maubot/archive/${GIT_COMMIT}.tar.gz -> ${P}.tar.gz
 	https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.1.2.tgz -> @ampproject-remapping-2.1.2.tgz
 	https://registry.yarnpkg.com/@apideck/better-ajv-errors/-/better-ajv-errors-0.3.3.tgz -> @apideck-better-ajv-errors-0.3.3.tgz
 	https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.7.tgz -> @babel-code-frame-7.16.7.tgz
@@ -1223,6 +1229,8 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 	sys-apps/yarn
 "
+
+S="${WORKDIR}/maubot-${GIT_COMMIT}"
 
 PATCHES=(
 	"${FILESDIR}"/maubot_ignore_example_config_in_package_data-${PV}.patch
