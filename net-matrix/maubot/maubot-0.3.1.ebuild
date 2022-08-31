@@ -1250,4 +1250,12 @@ src_install() {
 
 	newconfd "${FILESDIR}/${PN}.confd" "${PN}"
 	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
+
+	einfo "Copy ${EPREFIX}/etc/${PN}/example-config.yaml"
+	einfo "into ${EPREFIX}/etc/${PN}/config.yaml"
+	einfo "and edit to your liking."
+	einfo "Start with /etc/init.d/maubot start"
+	einfo "The management interface should now be available at"
+	einfo "http://localhost:29316/_matrix/maubot"
+	einfo "or whatever you configured."
 }
