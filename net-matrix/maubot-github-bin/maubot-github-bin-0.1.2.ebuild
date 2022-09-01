@@ -27,4 +27,5 @@ src_install() {
 	doins "${DISTDIR}/xyz.maubot.github-v${PV}.mbp"
 
 	einfo "You may need to restart maubot for it to load the new plugin."
+	einfo "See https://github.com/maubot/github#basic-setup for setup instructions."
 }
