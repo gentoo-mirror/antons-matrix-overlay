@@ -1257,7 +1257,7 @@ src_install() {
 	doins maubot/example-config.yaml
 
 	insinto "/var/lib/maubot"
-	newins -r maubot/management/frontend/build frontend
+	newins maubot/management/frontend/build frontend
 
 	keepdir "/var/lib/maubot/plugins/sqlite"
 	keepdir "/var/lib/maubot/plugins/upload"
