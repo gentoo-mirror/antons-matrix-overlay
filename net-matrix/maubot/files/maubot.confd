@@ -1,0 +1,25 @@
+rc_need="net-online"
+
+# If your configuration of maubot uses locally
+# running PostgreSQL you may want to uncomment the next line
+# rc_need="${rc_need} postgresql"
+
+# If your configuration of maubot connects to
+# locally running dendrite you may want to uncomment the
+# next line
+# rc_need="${rc_need} dendrite"
+
+#######
+# Other parameters
+
+# Configuration directory.
+# MAUBOT_CONFDIR=/etc/maubot
+
+# Configuration file.
+# MAUBOT_CONFIG=/etc/maubot/config.yaml
+
+# Whether to allow maubot to save an updated config.
+# MAUBOT_AUTOUPDATE_CONFIG=no
+
+# Other command-line options
+# MAUBOT_OPTS=

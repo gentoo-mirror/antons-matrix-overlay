@@ -1,0 +1,49 @@
+#!/sbin/openrc-run
+
+: ${MAUBOT_CONFDIR:=${RC_PREFIX%/}/etc/maubot}
+: ${MAUBOT_CONFIG:=${MAUBOT_CONFDIR}/config.yaml}
+: ${MAUBOT_PIDFILE:=${RC_PREFIX%/}/run/${SVCNAME}.pid}
+
+command="${RC_PREFIX%/}/usr/bin/python3"
+pidfile="${MAUBOT_PIDFILE}"
+command_background=true
+command_user="maubot:maubot"
+command_args="-m maubot ${MAUBOT_OPTS} --config \"${MAUBOT_CONFIG}\""
+
+case "${MAUBOT_AUTOUPDATE_CONFIG}" in
+	yes | Yes | YES | true | True | TRUE | 1 )
+		command_args="${command_args} --base-config \"${RC_PREFIX%/}/etc/maubot/example-config.yaml\""
+		;;
+	* )
+		command_args="${command_args} --no-update"
+		;;
+esac
+
+checkconfig() {
+	test -f "${MAUBOT_CONFIG}" || {
+		echo "\"${MAUBOT_CONFIG}\" does not exist or is not a regular file." >&2
+		echo "Use \"${RC_PREFIX%/}/etc/maubot/example-config.yaml\" as an example." >&2
+		return 1
+	}
+}
+
+start_pre() {
+	# If this isn't a restart, make sure that the user's config isn't
+	# busted before we try to start the daemon (this will produce
+	# better error messages than if we just try to start it blindly).
+	#
+	# If, on the other hand, this *is* a restart, then the stop_pre
+	# action will have ensured that the config is usable and we don't
+	# need to do that again.
+	if [ "${RC_CMD}" != "restart" ] ; then
+		checkconfig || return $?
+	fi
+}
+
+stop_pre() {
+	# If this is a restart, check to make sure the user's config
+	# isn't busted before we stop the running daemon.
+	if [ "${RC_CMD}" = "restart" ] ; then
+		checkconfig || return $?
+	fi
+}
