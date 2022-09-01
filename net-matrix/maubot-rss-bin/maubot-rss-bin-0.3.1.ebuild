@@ -26,4 +26,6 @@ src_unpack() {
 src_install() {
 	insinto /var/lib/maubot/plugins/active
 	doins "${DISTDIR}/xyz.maubot.rss-v${PV}.mbp"
+
+	einfo "You may need to restart maubot for it to load the new plugin."
 }
