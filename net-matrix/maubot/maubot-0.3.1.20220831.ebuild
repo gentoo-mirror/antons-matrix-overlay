@@ -1234,6 +1234,7 @@ S="${WORKDIR}/maubot-${GIT_COMMIT}"
 
 PATCHES=(
 	"${FILESDIR}"/maubot_ignore_example_config_in_package_data-${PV}.patch
+	"${FILESDIR}"/example-config.yaml-${PV}.patch
 )
 
 src_unpack() {
@@ -1260,10 +1261,13 @@ src_install() {
 	doins -r maubot/management/frontend/build
 	mv "${ED}/var/lib/maubot/build" "${ED}/var/lib/maubot/frontend"
 
+	keepdir "/var/log/maubot"
+	fowners maubot:maubot /var/log/maubot
 	keepdir "/var/lib/maubot/plugins/sqlite"
 	keepdir "/var/lib/maubot/plugins/upload"
 	keepdir "/var/lib/maubot/plugins/active"
 	keepdir "/var/lib/maubot/plugins/trash"
+	fowners -R maubot:maubot /var/lib/maubot
 
 	newconfd "${FILESDIR}/${PN}.confd" "${PN}"
 	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
