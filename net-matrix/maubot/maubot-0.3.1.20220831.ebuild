@@ -1256,6 +1256,9 @@ src_install() {
 	insinto "/etc/${PN}"
 	doins maubot/example-config.yaml
 
+	insinto "/var/lib/maubot"
+	doins -r maubot/management/frontend
+
 	newconfd "${FILESDIR}/${PN}.confd" "${PN}"
 	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
 
