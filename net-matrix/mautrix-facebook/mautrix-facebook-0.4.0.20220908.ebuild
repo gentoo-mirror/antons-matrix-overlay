@@ -3,9 +3,11 @@
 
 EAPI=8
 
+GIT_COMMIT="e9d05ec8689575186a399af48ea9ebd125956489"
+
 DESCRIPTION="A Matrix-Facebook Messenger puppeting bridge."
 HOMEPAGE="https://github.com/mautrix/facebook"
-SRC_URI="https://github.com/mautrix/facebook/archive/e9d05ec8689575186a399af48ea9ebd125956489.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/mautrix/facebook/archive/${GIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="AGPL-3+"
 SLOT="0"
@@ -18,7 +20,7 @@ PATCHES=(
 	"${FILESDIR}/example_config_bypass_distutils-${PV}.patch"
 )
 
-S="${WORKDIR}/facebook-${PV}"
+S="${WORKDIR}/facebook-${GIT_COMMIT}"
 
 DEPEND=""
 RDEPEND="
