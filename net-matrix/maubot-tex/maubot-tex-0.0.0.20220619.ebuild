@@ -14,7 +14,7 @@ KEYWORDS="~amd64"
 
 DEPEND="
 	net-matrix/maubot
-	dev-python/matplotlib
+	dev-python/matplotlib[latex]
 "
 RDEPEND="${DEPEND}"
 BDEPEND="app-arch/zip"
