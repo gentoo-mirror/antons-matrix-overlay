@@ -12,7 +12,8 @@ SRC_URI="https://github.com/mautrix/python/archive/refs/tags/v${PV}.tar.gz -> ${
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+#KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 
 S="${WORKDIR}/python-${PV}"
 
