@@ -1,0 +1,12 @@
+BDEPEND=app-arch/zip
+DEFINED_PHASES=compile install
+DEPEND=net-matrix/maubot dev-python/matplotlib
+DESCRIPTION=A maubot plugin to render LaTeX as SVG
+EAPI=8
+HOMEPAGE=https://github.com/maubot/tex
+KEYWORDS=~amd64
+LICENSE=AGPL-3
+RDEPEND=net-matrix/maubot dev-python/matplotlib
+SLOT=0
+SRC_URI=https://github.com/maubot/tex/archive/52c2ffe998f9e8b8c88ddd320f29ee397a0ba54c.tar.gz -> maubot-tex-0.0.0.20220619.tar.gz
+_md5_=694d4dd5e06df3c2e7daebf705943039
