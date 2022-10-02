@@ -1,8 +1,15 @@
 #!/sbin/openrc-run
 
+DENDRITE=${SVCNAME#*.}
 : ${DENDRITE_CONFDIR:=${RC_PREFIX%/}/etc/dendrite}
+
+if [ -n "${DENDRITE}" ] && [ ${SVCNAME} != "dendrite" ]; then
+: ${DENDRITE_CONFIG:=${DENDRITE_CONFDIR}/${DENDRITE}.yaml}
+: ${DENDRITE_PIDFILE:=${RC_PREFIX%/}/run/dendrite.${DENDRITE}.pid}
+else
 : ${DENDRITE_CONFIG:=${DENDRITE_CONFDIR}/dendrite.yaml}
 : ${DENDRITE_PIDFILE:=${RC_PREFIX%/}/run/${SVCNAME}.pid}
+fi
 
 if [ -n "${DENDRITE_BINARY}" ] ; then
 	: # Do nothing, DENDRITE_BINARY is set externally.
@@ -20,6 +27,7 @@ command="${DENDRITE_BINARY}"
 pidfile="${DENDRITE_PIDFILE}"
 command_background=true
 command_user="dendrite:dendrite"
+directory="/var/lib/dendrite"
 command_args="${DENDRITE_OPTS} -config ${DENDRITE_CONFIG}"
 
 checkconfig() {
