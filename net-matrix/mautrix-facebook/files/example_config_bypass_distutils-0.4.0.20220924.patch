@@ -1,0 +1,12 @@
+diff --git a/setup.py b/setup.py
+index b55d5e1..8b36770 100644
+--- a/setup.py
++++ b/setup.py
+@@ -70,7 +70,4 @@ setuptools.setup(
+         "maufbapi.http": ["zstd-dict.dat"],
+         "maufbapi.mqtt": ["topics.json"],
+     },
+-    data_files=[
+-        (".", ["mautrix_facebook/example-config.yaml"]),
+-    ],
+ )
