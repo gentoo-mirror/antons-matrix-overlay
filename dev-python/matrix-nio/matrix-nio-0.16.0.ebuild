@@ -4,7 +4,7 @@
 EAPI=7
 
 PYTHON_COMPAT=( python3_{6,7,8,9} )
-DISTUTILS_USE_SETUPTOOLS="pyproject.toml"
+DISTUTILS_USE_PEP517="poetry"
 inherit distutils-r1
 
 DESCRIPTION="A Python Matrix client library, designed according to sans I/O principles."
@@ -30,7 +30,7 @@ RDEPEND="${DEPEND}
 	>=dev-python/pycryptodome-3.9.7
 	>=dev-python/unpaddedbase64-1.1.0"
 BDEPEND="
-	dev-python/pyproject2setuppy[${PYTHON_USEDEP}]
+	>=dev-python/poetry-core-1.0.0
 "
 
 # PATCHES=(
