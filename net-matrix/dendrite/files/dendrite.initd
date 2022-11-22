@@ -1,8 +1,17 @@
 #!/sbin/openrc-run
 
+DENDRITE=${SVCNAME#*.}
 : ${DENDRITE_CONFDIR:=${RC_PREFIX%/}/etc/dendrite}
+
+if [ -n "${DENDRITE}" ] && [ ${SVCNAME} != "dendrite" ]; then
+: ${DENDRITE_CONFIG:=${DENDRITE_CONFDIR}/${DENDRITE}.yaml}
+: ${DENDRITE_PIDFILE:=${RC_PREFIX%/}/run/dendrite.${DENDRITE}.pid}
+: ${DENDRITE_RC_CONFIG:=${RC_PREFIX%/}/etc/conf.d/dendrite.${DENDRITE}}
+else
 : ${DENDRITE_CONFIG:=${DENDRITE_CONFDIR}/dendrite.yaml}
 : ${DENDRITE_PIDFILE:=${RC_PREFIX%/}/run/${SVCNAME}.pid}
+: ${DENDRITE_RC_CONFIG:=${RC_PREFIX%/}/etc/conf.d/dendrite}
+fi
 
 if [ -n "${DENDRITE_BINARY}" ] ; then
 	: # Do nothing, DENDRITE_BINARY is set externally.
@@ -12,7 +21,7 @@ elif [ "${DENDRITE_MODE}" == "polylith" ] ; then
 	DENDRITE_BINARY:=${RC_PREFIX%/}/usr/bin/dendrite-polylith-multi
 else
 	echo "Unknown dendrite mode: \"${DENDRITE_MODE}\"." >&2
-	echo "Check the DENDRITE_MODE variable in ${RC_PREFIX%/}/etc/conf.d/dendrite" >&2
+	echo "Check the DENDRITE_MODE variable in ${DENDRITE_RC_CONFIG}" >&2
 	exit 1
 fi
 
@@ -20,6 +29,7 @@ command="${DENDRITE_BINARY}"
 pidfile="${DENDRITE_PIDFILE}"
 command_background=true
 command_user="dendrite:dendrite"
+directory="/var/lib/dendrite"
 command_args="${DENDRITE_OPTS} -config ${DENDRITE_CONFIG}"
 
 checkconfig() {
