@@ -40,7 +40,7 @@ RDEPEND="
 	<dev-python/pycryptodome-4.0.0
 	>=dev-python/paho-mqtt-1.5.0
 	<dev-python/paho-mqtt-2.0.0
-	dev-python/python-zstandard
+	dev-python/zstandard
 	acct-user/mautrix-facebook
 	"
 BDEPEND=""
