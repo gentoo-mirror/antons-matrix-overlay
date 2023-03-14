@@ -927,15 +927,22 @@ src_install() {
 
 	dodir "/etc/dendrite"
 	insinto /etc/dendrite
-	doins "${S}/dendrite-sample.monolith.yaml"
-	doins "${S}/dendrite-sample.polylith.yaml"
-	newinitd "${FILESDIR}"/dendrite.initd dendrite
-	newconfd "${FILESDIR}"/dendrite.confd dendrite
+	doins "${S}/dendrite-sample.yaml"
+	newinitd "${FILESDIR}"/dendrite.0.12.initd dendrite
+	newconfd "${FILESDIR}"/dendrite.0.12.confd dendrite
 
 	keepdir "/var/log/dendrite"
 	fowners dendrite:dendrite "/var/log/dendrite"
 
-	einfo "If you are upgrading from dendrite 0.5.X or earlier, you may need to update your config to the new format."
-	einfo "See ${EPREFIX}/etc/dendrite/dendrite-sample.monolith.yaml or"
-	einfo "${EPREFIX}/etc/dendrite/dendrite-sample.polylith.yaml for an example."
+	einfo "To use dendrite, you may need to also install several other services,"
+	einfo "see https://matrix-org.github.io/dendrite/installation for detailed"
+	einfo "instructions."
+	einfo "The sample config has been installed into"
+	einfo "    ${EPREFIX}/etc/dendrite/dendrite-sample.yaml"
+	einfo "Copy it into ${EPREFIX}/etc/dendrite/dendrite.yaml"
+	einfo "and edit to your liking."
+	einfo "The OpenRC service is called 'dendrite'"
+	einfo ""
+	einfo "With version 0.12.0, the Polylith mode has beed deprecated and removed."
+	einfo "If you were using Polylith, you have to migrate to Monolith now."
 }
