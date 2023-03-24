@@ -15,7 +15,7 @@ KEYWORDS="~amd64"
 SLOT="0"
 LICENSE="Apache-2.0"
 
-S="${S}/python"
+S="${WORKDIR}/olm-${PV}/python"
 
 CDEPEND="
 	>=dev-libs/olm-${PV}
