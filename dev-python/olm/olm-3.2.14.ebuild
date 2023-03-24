@@ -1,16 +1,17 @@
 # Copyright 2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=(python3_7 python3_8)
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{8..11} )
 
 inherit distutils-r1
 
 DESCRIPTION="Python CFFI binding to libolm"
 HOMEPAGE="https://gitlab.matrix.org/matrix-org/olm/"
 SRC_URI="https://gitlab.matrix.org/matrix-org/olm/-/archive/${PV}/olm-${PV}.tar.bz2 -> ${P}.tar.bz2"
-KEYWORDS=""
+KEYWORDS="~amd64"
 SLOT="0"
 LICENSE="Apache-2.0"
 
@@ -21,4 +22,7 @@ CDEPEND="
 "
 
 DEPEND="${CDEPEND}"
-RDEPEND="${CDEPEND}"
+RDEPEND="
+	>=dev-python/cffi-1.0.0[${PYTHON_USEDEP}]
+	${CDEPEND}
+"
