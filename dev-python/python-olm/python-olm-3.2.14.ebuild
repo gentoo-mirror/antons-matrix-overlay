@@ -23,6 +23,7 @@ CDEPEND="
 
 RDEPEND="
 	>=dev-python/cffi-1.0.0[${PYTHON_USEDEP}]
+	dev-python/future
 	${CDEPEND}
 "
 
@@ -30,7 +31,6 @@ DEPEND="
 	${CDEPEND}
 	test? (
 		${RDEPEND}
-		dev-python/future
 		dev-python/pytest
 		dev-python/pytest-flake8
 		dev-python/pytest-isort
