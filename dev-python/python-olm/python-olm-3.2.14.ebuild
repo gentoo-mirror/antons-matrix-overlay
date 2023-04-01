@@ -21,8 +21,23 @@ CDEPEND="
 	>=dev-libs/olm-${PV}
 "
 
-DEPEND="${CDEPEND}"
 RDEPEND="
 	>=dev-python/cffi-1.0.0[${PYTHON_USEDEP}]
 	${CDEPEND}
 "
+
+DEPEND="
+	${CDEPEND}
+	test? (
+		${RDEPEND}
+		dev-python/future
+		dev-python/pytest
+		dev-python/pytest-flake8
+		dev-python/pytest-isort
+		dev-python/pytest-cov
+		dev-python/pytest-benchmark
+		dev-python/aspectlib
+	)
+"
+
+distutils_enable_tests pytest
