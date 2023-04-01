@@ -16,6 +16,8 @@ LICENSE="BSD"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 
+PATCHES=( "${FILESDIR}/pytest-isort-fix-stray-top-level-3.1.0.patch" )
+
 distutils_enable_tests pytest
 
 RDEPEND="
