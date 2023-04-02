@@ -14,7 +14,7 @@ EGIT_REPO_URI="https://gitlab.com/anton.molyboha/pipe2matrix.git"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 
 # TODO: the package optionally supports end-to-end encryption.
 # We need to define a use flag and appropriate dependencies to enable that.
