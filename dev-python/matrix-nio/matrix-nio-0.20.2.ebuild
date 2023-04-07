@@ -15,8 +15,7 @@ LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-# TODO: the package optionally supports end-to-end encryption.
-# We need to define a use flag and appropriate dependencies to enable that.
+IUSE="encryption"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -29,11 +28,14 @@ RDEPEND="${DEPEND}
 	>=dev-python/jsonschema-4.4.0
 	>=dev-python/unpaddedbase64-2.1.0
 	>=dev-python/pycryptodome-3.10.1
-	>=dev-python/aiohttp-socks-0.7.0"
+	>=dev-python/aiohttp-socks-0.7.0
+	encryption? (
+		>=dev-python/python-olm-3.1.3
+		>=dev-python/peewee-3.14.4
+		>=dev-python/cachetools-4.2.1
+		>=dev-python/atomicwrites-1.4.0
+	)
+	"
 BDEPEND="
 	>=dev-python/poetry-core-1.0.0
 "
-
-# PATCHES=(
-# 	"${FILESDIR}/${P}-device_lists_are_optional.patch"
-# )
