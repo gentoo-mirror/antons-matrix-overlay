@@ -28,4 +28,4 @@ net-matrix/maubot-reminder-bin 0.2.1: A maubot plugin to remind you about things
 net-matrix/maubot-rss-bin 0.3.1 0.3.2: A RSS plubin for maubot
 net-matrix/maubot-tex 0.0.0.20220619: A maubot plugin to render LaTeX as SVG
 net-matrix/mautrix-facebook 0.3.1 0.3.3 0.4.0 0.4.0.20220908 0.4.0.20220915 0.4.0.20220924 0.4.1: A Matrix-Facebook Messenger puppeting bridge.
-net-matrix/pipe2matrix 9999: A bot that redirects a program's standard input/output into a Matrix room.
+net-matrix/pipe2matrix 0.0.1 9999: A bot that redirects a program's standard input/output into a Matrix room.
