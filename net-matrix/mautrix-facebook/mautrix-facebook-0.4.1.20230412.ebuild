@@ -12,6 +12,7 @@ LICENSE="AGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
+
 PYTHON_COMPAT=( python3_{8,9,10,11} )
 inherit distutils-r1
 
@@ -19,7 +20,7 @@ PATCHES=(
 	"${FILESDIR}/example_config_bypass_distutils-${PV}.patch"
 )
 
-S="${WORKDIR}/facebook-${PV}"
+S="${WORKDIR}/facebook-${COMMIT}"
 
 DEPEND=""
 RDEPEND="
