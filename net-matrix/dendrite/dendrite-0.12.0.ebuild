@@ -20,7 +20,7 @@ BDEPEND=""
 go-module_set_globals
 
 SRC_URI="https://github.com/matrix-org/dendrite/archive/v${PV}.tar.gz -> ${P}.tar.gz
-	https://gitea.anton.molyboha.me/gentoo/matrix-files/raw/branch/main/net-matrix/dendrite/${P}-deps.tar.xz"
+	https://files.anton.molyboha.me/gentoo-files/net-matrix/dendrite/${P}-deps.tar.xz"
 GO_IMPORTPATH="github.com/matrix-org/dendrite"
 EGO_PN="${GO_IMPORTPATH}/cmd/..."
 
