@@ -19,10 +19,13 @@ BDEPEND=""
 
 go-module_set_globals
 
-SRC_URI="https://github.com/matrix-org/dendrite/archive/v${PV}.tar.gz -> ${P}.tar.gz
+COMMIT="9f7e14e4d0b7a552213b48409ffea2db9cfdd580"
+SRC_URI="https://github.com/matrix-org/dendrite/archive/${COMMIT}.tar.gz
 	https://files.anton.molyboha.me/gentoo-files/net-matrix/dendrite/${P}-deps.tar.xz"
 GO_IMPORTPATH="github.com/matrix-org/dendrite"
 EGO_PN="${GO_IMPORTPATH}/cmd/..."
+
+S="${WORKDIR}/${PN}-${COMMIT}"
 
 OUT_GOPATH="${S}/go-path"
 
