@@ -1,0 +1,2 @@
+# Occasionally fails to start after an upgrade from a previous version. The cause is a new version of NATS. Use dendrite-0.13.1_p20230706 instead, which reverted the NATS version.
+=net-matrix/dendrite-0.13.1
