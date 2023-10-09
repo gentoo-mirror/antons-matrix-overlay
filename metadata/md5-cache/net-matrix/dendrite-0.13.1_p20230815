@@ -10,5 +10,5 @@ RDEPEND=acct-user/dendrite acct-group/dendrite
 RESTRICT=strip
 SLOT=0
 SRC_URI=https://github.com/matrix-org/dendrite/archive/9a12420428f1832c76fc0c84ad85db200e261ecb.tar.gz https://files.anton.molyboha.me/gentoo-files/net-matrix/dendrite/dendrite-0.13.1_p20230815-deps.tar.xz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	go-module	8624eede24936fd7666e5298e5332f22
+_eclasses_=multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	go-module	8624eede24936fd7666e5298e5332f22
 _md5_=eeccb26bc7c9bd59942f885eef9bde8c
