@@ -44,7 +44,6 @@ BDEPEND="
 		${RDEPEND}
 		>=dev-python/pytest-6.2.3
 		>=dev-python/pytest-isort-1.3.0
-		>=dev-python/pytest-cov-2.11.1
 		>=dev-python/hyperframe-6.0.0
 		>=dev-python/hypothesis-6.8.9
 		>=dev-python/hpack-4.0.0
