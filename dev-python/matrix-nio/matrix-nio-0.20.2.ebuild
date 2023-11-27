@@ -52,7 +52,6 @@ BDEPEND="
 		>=dev-python/mypy-0.812
 		>=dev-python/pytest-aiohttp-0.3.0
 		>=dev-python/aioresponses-0.7.2
-		>=dev-python/pytest-benchmark-3.2.3
 	)
 "
 
@@ -60,5 +59,5 @@ distutils_enable_tests pytest
 
 python_test() {
 	# Skip `tests/async_client_test::TestClass::test_connect_wrapper` because it requires network.
-	epytest -k 'not (async_client_test and TestClass and test_connect_wrapper)'
+	epytest -k 'not (async_client_test and TestClass and test_connect_wrapper) and not (key_export_test and TestClass and test_encrypt_rounds)'
 }
