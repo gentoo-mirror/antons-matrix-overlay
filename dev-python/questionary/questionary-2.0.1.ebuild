@@ -16,9 +16,11 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
+IUSE="ignore_issue1726"
+
 RDEPEND="
 	>=dev-python/prompt-toolkit-2.0.0[${PYTHON_USEDEP}]
-	<=dev-python/prompt-toolkit-3.0.36[${PYTHON_USEDEP}]
+	!ignore_issue1726? ( <=dev-python/prompt-toolkit-3.0.36[${PYTHON_USEDEP}] )
 	"
 
 distutils_enable_tests pytest
@@ -27,3 +29,18 @@ EPYTEST_DESELECT=(
 	# TypeError: <lambda>() missing 1 required positional argument: 'strike'
 	tests/prompts/test_common.py::test_print_with_style
 )
+
+src_prepare() {
+	use ignore_issue1726 && eapply "${FILESDIR}/questionary_ignore_issue1726-${PV}.patch"
+	eapply_user
+}
+
+pkg_postinst() {
+	if use ignore_issue1726 ; then
+		ewarn "You have enabled ignore_issue1726 use flag. This will allow portage"
+		ewarn "to install dev-python/prompt-toolkit versions newer than 3.0.36"
+		ewarn "but may lead to exceptions be thrown as described in"
+		ewarn "https://github.com/prompt-toolkit/python-prompt-toolkit/issues/1726"
+		ewarn "Use at your own risk."
+	fi
+}
