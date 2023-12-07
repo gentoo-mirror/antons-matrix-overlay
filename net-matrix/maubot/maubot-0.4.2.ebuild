@@ -1215,7 +1215,7 @@ DEPEND="
 	>=dev-python/colorama-0.4.0
 	<dev-python/colorama-0.5.0
 	>=dev-python/questionary-1.0.0
-	<dev-python/questionary-2.0.0
+	<dev-python/questionary-3.0.0
 	>=dev-python/jinja-2.0.0
 	<dev-python/jinja-4.0.0
 "
@@ -1227,6 +1227,7 @@ BDEPEND="
 PATCHES=(
 	"${FILESDIR}"/maubot_ignore_example_config_in_package_data-${PV}.patch
 	"${FILESDIR}"/example-config.yaml-${PV}.patch
+	"${FILESDIR}"/maubot_allow_questionary-2-${PV}.patch
 )
 
 src_unpack() {
