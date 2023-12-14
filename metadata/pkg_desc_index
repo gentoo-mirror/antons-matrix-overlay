@@ -7,7 +7,7 @@ acct-user/matrix-skype 0: matrix-skype program user
 acct-user/maubot 0: The user to run net-matrix/maubot as.
 acct-user/mautrix-facebook 0: The user for net-matrix/mautrix-facebook bridge
 dev-libs/olm 3.1.5 3.2.11 3.2.12 3.2.13 3.2.14 3.2.15 3.2.16: Implementation of the olm and megolm cryptographic ratchets
-dev-python/aiosqlite 0.17.0-r1: asyncio bridge to the standard sqlite3 module
+dev-python/aiosqlite 0.17.0-r1 0.18.0: asyncio bridge to the standard sqlite3 module
 dev-python/aspectlib 2.0.0: An aspect-oriented programming, monkey-patch and decorators library
 dev-python/asyncpg 0.23.0 0.25.0 0.26.0: A fast PostgreSQL Database Client Library for Python/asyncio
 dev-python/matrix-nio 0.19.0 0.20.0 0.20.1 0.20.2 0.21.2 0.22.1 0.23.0: A Python Matrix client library, designed according to sans I/O principles.
