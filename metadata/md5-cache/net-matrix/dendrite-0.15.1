@@ -1,0 +1,13 @@
+BDEPEND=>=dev-lang/go-1.20:= app-arch/unzip
+DEFINED_PHASES=compile install test unpack
+DESCRIPTION=Matrix server written in Go
+EAPI=8
+HOMEPAGE=https://matrix.org https://github.com/element-hq/dendrite
+INHERIT=go-module
+KEYWORDS=~amd64
+LICENSE=AGPL-3
+RDEPEND=acct-user/dendrite acct-group/dendrite
+SLOT=0
+SRC_URI=https://github.com/element-hq/dendrite/archive/refs/tags/v0.15.1.tar.gz -> dendrite-0.15.1.tar.gz https://files.anton.molyboha.me/gentoo-files/net-matrix/dendrite/dendrite-0.15.1-deps.tar.xz
+_eclasses_=multiprocessing	1e32df7deee68372153dca65f4a7c21f	toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	go-env	0e2babf96e7d0b045fc07ad199eb2399	go-module	d96f2a2fd6d8fbad6d94516bf238f885
+_md5_=d9e8472d9e1faf2d95125c4fa46546ad
