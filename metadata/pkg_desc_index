@@ -16,7 +16,7 @@ dev-python/pytest-isort 3.1.0: Plugin to check import ordering using isort
 dev-python/python-olm 3.2.14: Python CFFI binding to libolm
 dev-python/questionary 1.10.0 1.10.0_p20230525 2.0.1: Python library to build pretty command line user prompts
 dev-python/unpaddedbase64 1.1.0 2.1.0: Encode and decode Base64 without "=" padding.
-net-matrix/dendrite 0.10.0 0.10.1 0.10.2 0.10.3 0.10.4 0.10.5 0.10.6 0.10.7 0.10.8 0.10.9 0.11.0 0.11.1 0.12.0 0.13.0 0.13.1 0.13.1_p20230706 0.13.1_p20230815 0.13.2 0.13.3 0.13.4 0.13.5 0.13.6 0.13.7 0.14.1 0.15.1: Matrix server written in Go
+net-matrix/dendrite 0.10.0 0.10.1 0.10.2 0.10.3 0.10.4 0.10.5 0.10.6 0.10.7 0.10.8 0.10.9 0.11.0 0.11.1 0.12.0 0.13.0 0.13.1 0.13.1_p20230706 0.13.1_p20230815 0.13.2 0.13.3 0.13.4 0.13.5 0.13.6 0.13.7 0.14.1 0.15.1 0.15.2: Matrix server written in Go
 net-matrix/dendrite-server 0.1: Installs a typical configuration of dendrite.
 net-matrix/matrix-skype 0.0.0.20211027 0.0.0.20220411 0.0.0.20220805: A Matrix-Skype puppeting bridge
 net-matrix/maubot-github-bin 0.1.2: A GitHub client and webhook receiver for maubot
