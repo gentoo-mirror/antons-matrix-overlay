@@ -9,3 +9,9 @@ dev-python/python-olm
 
 # Now available in ::gentoo.
 dev-libs/olm
+
+# Unmaintained ebuild, no dependencies left.
+dev-python/aiosqlite
+
+# Unmaintained ebuild, no unmasked dependencies.
+dev-python/pytest-benchmark
