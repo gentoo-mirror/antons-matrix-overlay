@@ -27,3 +27,6 @@ dev-python/asyncpg
 
 # Unmaintained ebuild, please, use the ::guru version.
 dev-python/mautrix
+
+# Unmaintained, no reverse dependencies.
+dev-python/questionary
