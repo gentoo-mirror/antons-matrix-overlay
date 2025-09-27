@@ -24,3 +24,6 @@ net-matrix/mautrix-facebook
 
 # No unmasked dependencies left.
 dev-python/asyncpg
+
+# Unmaintained ebuild, please, use the ::guru version.
+dev-python/mautrix
