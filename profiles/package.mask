@@ -6,3 +6,6 @@ net-matrix/maubot
 
 # I'm not maintaining the ebuild any more, please use the version from ::guru.
 dev-python/python-olm
+
+# Now available in ::gentoo.
+dev-libs/olm
