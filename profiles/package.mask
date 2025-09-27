@@ -15,3 +15,6 @@ dev-python/aiosqlite
 
 # Unmaintained ebuild, no unmasked dependencies.
 dev-python/pytest-benchmark
+
+# Unmaintained ebuild, no unmasked dependencies.
+dev-python/aspectlib
