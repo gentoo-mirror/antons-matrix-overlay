@@ -9,10 +9,11 @@ SRC_URI="https://github.com/mautrix/facebook/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="AGPL-3+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 
 
-PYTHON_COMPAT=( python3_{8,9,10,11} )
+PYTHON_COMPAT=( python3_{8,9,10,11,12} )
+DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
 PATCHES=(
