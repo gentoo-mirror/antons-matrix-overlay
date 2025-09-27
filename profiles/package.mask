@@ -21,3 +21,6 @@ dev-python/aspectlib
 
 # Unmaintained. Use net-im/mautrix-meta::guru instead.
 net-matrix/mautrix-facebook
+
+# No unmasked dependencies left.
+dev-python/asyncpg

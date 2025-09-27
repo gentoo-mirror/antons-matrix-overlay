@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8..11} )  # doesn't build with pypy3
+PYTHON_COMPAT=( python3_{8..12} )  # doesn't build with pypy3
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://pypi/${P:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 
 DEPEND="dev-python/cython[${PYTHON_USEDEP}]"
 
