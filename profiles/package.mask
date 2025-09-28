@@ -30,3 +30,6 @@ dev-python/mautrix
 
 # Unmaintained, no reverse dependencies.
 dev-python/questionary
+
+# Unmaintained ebuild, no unmasked reverse dependencies, up-to-date version available in ::gentoo.
+dev-python/prompt-toolkit
