@@ -33,3 +33,6 @@ dev-python/questionary
 
 # Unmaintained ebuild, no unmasked reverse dependencies, up-to-date version available in ::gentoo.
 dev-python/prompt-toolkit
+
+# Unmaintained ebuild, no unmasked reverse dependencies.
+dev-python/pytest-flake8
