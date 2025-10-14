@@ -3,13 +3,15 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8,9,10,11,12} )
-DISTUTILS_USE_PEP517="poetry"
+PYTHON_COMPAT=( python3_{8,9,10,11,12,13,14} )
+DISTUTILS_USE_PEP517="setuptools"
 inherit distutils-r1
 
+MY_PV="${PV/_rc/rc}"
 DESCRIPTION="A Python Matrix client library, designed according to sans I/O principles."
 HOMEPAGE="https://github.com/matrix-nio/matrix-nio"
-SRC_URI="https://github.com/matrix-nio/matrix-nio/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/matrix-nio/matrix-nio/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/${PN}-${MY_PV}"
 
 LICENSE="ISC"
 SLOT="0"
@@ -21,10 +23,10 @@ REQUIRED_USE="test? ( encryption )"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	>=dev-python/aiohttp-3.9.0
+	>=dev-python/aiohttp-3.10.0
 	<dev-python/aiohttp-4.0.0
-	>=dev-python/aiofiles-23.1.0
-	<dev-python/aiofiles-24.0.0
+	>=dev-python/aiofiles-24.1.0
+	<dev-python/aiofiles-25.0.0
 	>=dev-python/h11-0.14.0
 	<dev-python/h11-0.15.0
 	>=dev-python/h2-4.0.0
@@ -38,34 +40,40 @@ RDEPEND="${DEPEND}
 	>=dev-python/aiohttp-socks-0.8.4
 	<dev-python/aiohttp-socks-0.9.0
 	encryption? (
-		>=dev-python/python-olm-3.1.3
+		>=dev-python/python-olm-3.2.16
 		<dev-python/python-olm-4.0.0
 		>=dev-python/peewee-3.14.4
 		<dev-python/peewee-4.0.0
-		>=dev-python/cachetools-4.2.1
+		>=dev-python/cachetools-5.3.3
+		<dev-python/cachetools-6.0.0
 		>=dev-python/atomicwrites-1.4.0
 		<dev-python/atomicwrites-2.0.0
 	)
 	"
 BDEPEND="
-	>=dev-python/poetry-core-1.0.0
+	>=dev-python/setuptools-61.0.0
 	test? (
 		${RDEPEND}
-		>=dev-python/pytest-6.2.3
-		>=dev-python/pytest-isort-1.3.0
+		>=dev-python/pytest-8.2.0
+		>=dev-python/pytest-asyncio-0.24.0
 		>=dev-python/hyperframe-6.0.0
 		<dev-python/hyperframe-7.0.0
 		>=dev-python/hypothesis-6.8.9
 		<dev-python/hypothesis-7.0.0
 		>=dev-python/hpack-4.0.0
 		<dev-python/hpack-5.0.0
-		>=dev-python/Faker-8.0.0
-		>=dev-python/mypy-0.812
+		>=dev-python/faker-8.0.0
+		>=dev-python/mypy-1.11.0
+		<dev-python/mypy-2.0.0
 		>=dev-python/pytest-aiohttp-0.3.0
 		>=dev-python/aioresponses-0.7.4
 		<dev-python/aioresponses-0.8.0
 	)
 "
+
+PATCHES=(
+	"${FILESDIR}/${P}-fix-pytest-event-loop.patch"
+)
 
 distutils_enable_tests pytest
 
