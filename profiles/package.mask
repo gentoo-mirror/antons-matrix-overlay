@@ -55,3 +55,6 @@ dev-python/pytest-flake8
 
 # Unless somebody complains, I don't plan to maintain this ebuild. Has no reverse dependencies any more.
 dev-python/pytest-isort
+
+# Unmaintained ebuild, no reverse dependencies.
+dev-python/sqlalchemy
