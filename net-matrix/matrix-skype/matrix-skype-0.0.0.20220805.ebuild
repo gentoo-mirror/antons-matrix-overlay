@@ -444,8 +444,8 @@ src_install() {
 	dobin matrix-skype
 	insinto /etc/matrix-skype
 	doins example-config.yaml
-	keepdir "${EPREFIX}/var/log/matrix-skype"
-	fowners matrix-skype:matrix-skype "${EPREFIX}/var/log/matrix-skype"
+	keepdir "/var/log/matrix-skype"
+	fowners matrix-skype:matrix-skype "/var/log/matrix-skype"
 	newinitd "${FILESDIR}/matrix-skype.initd" matrix-skype
 	newconfd "${FILESDIR}/matrix-skype.confd" matrix-skype
 

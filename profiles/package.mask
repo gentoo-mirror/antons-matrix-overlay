@@ -61,3 +61,6 @@ dev-python/sqlalchemy::antons-matrix-overlay
 
 # Unmaintained ebuild, use the version from ::guru.
 dev-python/unpaddedbase64::antons-matrix-overlay
+
+# Unmaintained ebuild, also skype is dead.
+net-matrix/matrix-skype::antons-matrix-overlay
