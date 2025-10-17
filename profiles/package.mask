@@ -58,3 +58,6 @@ dev-python/pytest-isort
 
 # Unmaintained ebuild, no reverse dependencies.
 dev-python/sqlalchemy
+
+# Unmaintained ebuild, use the version from ::guru.
+dev-python/unpaddedbase64
