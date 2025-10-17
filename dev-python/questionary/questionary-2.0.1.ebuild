@@ -20,7 +20,7 @@ IUSE="ignore_issue1726"
 
 RDEPEND="
 	>=dev-python/prompt-toolkit-2.0.0[${PYTHON_USEDEP}]
-	!ignore_issue1726? ( <=dev-python/prompt-toolkit-3.0.36[${PYTHON_USEDEP}] )
+	!ignore_issue1726? ( <=dev-python/prompt-toolkit-3.0.36-r9999[${PYTHON_USEDEP}] )
 	"
 
 distutils_enable_tests pytest
