@@ -4,7 +4,23 @@
 # Bit-rotten ebuild. Please, use net-im/maubot::guru.
 net-matrix/maubot
 
-# I'm not maintaining the ebuild any more, please use the version from ::guru.
+# I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
+# install plugins as appropriate for their setup.
+net-matrix/maubot-github-bin
+
+# I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
+# install plugins as appropriate for their setup.
+net-matrix/maubot-reminder-bin
+
+# I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
+# install plugins as appropriate for their setup.
+net-matrix/maubot-tex
+
+# I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
+# install plugins as appropriate for their setup.
+net-matrix/maubot-rss-bin
+
+# I'm not maintaining the ebuild anymore, please use the version from ::guru.
 dev-python/python-olm
 
 # Now available in ::gentoo.
