@@ -1,63 +1,63 @@
 # Bit-rotten ebuild. Please, use net-im/maubot::guru.
-net-matrix/maubot::antons-matrix-overlay
+net-matrix/maubot
 
 # I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
 # install plugins as appropriate for their setup.
-net-matrix/maubot-github-bin::antons-matrix-overlay
+net-matrix/maubot-github-bin
 
 # I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
 # install plugins as appropriate for their setup.
-net-matrix/maubot-reminder-bin::antons-matrix-overlay
+net-matrix/maubot-reminder-bin
 
 # I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
 # install plugins as appropriate for their setup.
-net-matrix/maubot-tex::antons-matrix-overlay
+net-matrix/maubot-tex
 
 # I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
 # install plugins as appropriate for their setup.
-net-matrix/maubot-rss-bin::antons-matrix-overlay
+net-matrix/maubot-rss-bin
 
 # I'm not maintaining the ebuild anymore, please use the version from ::guru.
-dev-python/python-olm::antons-matrix-overlay
+dev-python/python-olm
 
 # Now available in ::gentoo.
-dev-libs/olm::antons-matrix-overlay
+dev-libs/olm
 
 # Unmaintained ebuild, no dependencies left.
-dev-python/aiosqlite::antons-matrix-overlay
+dev-python/aiosqlite
 
 # Unmaintained ebuild, no unmasked dependencies.
-dev-python/pytest-benchmark::antons-matrix-overlay
+dev-python/pytest-benchmark
 
 # Unmaintained ebuild, no unmasked dependencies.
-dev-python/aspectlib::antons-matrix-overlay
+dev-python/aspectlib
 
 # Unmaintained. Use net-im/mautrix-meta::guru instead.
-net-matrix/mautrix-facebook::antons-matrix-overlay
+net-matrix/mautrix-facebook
 
 # No unmasked dependencies left.
-dev-python/asyncpg::antons-matrix-overlay
+dev-python/asyncpg
 
 # Unmaintained ebuild, please, use the ::guru version.
-dev-python/mautrix::antons-matrix-overlay
+dev-python/mautrix
 
 # Unmaintained, no reverse dependencies.
-dev-python/questionary::antons-matrix-overlay
+dev-python/questionary
 
 # Unmaintained ebuild, no unmasked reverse dependencies, up-to-date version available in ::gentoo.
-dev-python/prompt-toolkit::antons-matrix-overlay
+dev-python/prompt-toolkit
 
 # Unmaintained ebuild, no unmasked reverse dependencies.
-dev-python/pytest-flake8::antons-matrix-overlay
+dev-python/pytest-flake8
 
 # Unless somebody complains, I don't plan to maintain this ebuild. Has no reverse dependencies any more.
-dev-python/pytest-isort::antons-matrix-overlay
+dev-python/pytest-isort
 
 # Unmaintained ebuild, no reverse dependencies.
-dev-python/sqlalchemy::antons-matrix-overlay
+dev-python/sqlalchemy
 
 # Unmaintained ebuild, use the version from ::guru.
-dev-python/unpaddedbase64::antons-matrix-overlay
+dev-python/unpaddedbase64
 
 # Unmaintained ebuild, also skype is dead.
-net-matrix/matrix-skype::antons-matrix-overlay
+net-matrix/matrix-skype
