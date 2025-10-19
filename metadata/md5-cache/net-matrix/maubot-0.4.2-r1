@@ -1,0 +1,7 @@
+DEFINED_PHASES=pretend
+DESCRIPTION=Placeholder. Please migrate to net-im/maubot::guru.
+EAPI=8
+HOMEPAGE=https://github.com/maubot/maubot
+LICENSE=AGPL-3
+SLOT=0
+_md5_=8517bf7ed9a030b5f5f64bd5fc13071e
