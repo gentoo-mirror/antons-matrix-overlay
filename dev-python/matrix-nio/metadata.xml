@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+<email>anton.stay.connected@gmail.com</email>
+<name>Anton Molyboha</name>
+</maintainer>
+<upstream>
+<remote-id type="pypi">matrix-nio</remote-id>
+<remote-id type="github">matrix-nio/matrix-nio</remote-id>
+</upstream>
+<use>
+<flag name="encryption">Pull in the dependencies needed for the E2EE support.</flag>
+</use>
+</pkgmetadata>

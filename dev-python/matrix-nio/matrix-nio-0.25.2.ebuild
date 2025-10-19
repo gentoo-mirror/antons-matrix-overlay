@@ -38,14 +38,14 @@ RDEPEND="${DEPEND}
 	>=dev-python/pycryptodome-3.10.1
 	<dev-python/pycryptodome-4.0.0
 	>=dev-python/aiohttp-socks-0.8.4
-	<dev-python/aiohttp-socks-0.9.0
+	<dev-python/aiohttp-socks-0.11.0
 	encryption? (
 		>=dev-python/python-olm-3.2.16
 		<dev-python/python-olm-4.0.0
 		>=dev-python/peewee-3.14.4
 		<dev-python/peewee-4.0.0
 		>=dev-python/cachetools-5.3.3
-		<dev-python/cachetools-6.0.0
+		<dev-python/cachetools-7.0.0
 		>=dev-python/atomicwrites-1.4.0
 		<dev-python/atomicwrites-2.0.0
 	)
