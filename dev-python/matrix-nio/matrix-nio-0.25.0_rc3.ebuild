@@ -62,7 +62,7 @@ BDEPEND="
 		<dev-python/hypothesis-7.0.0
 		>=dev-python/hpack-4.0.0
 		<dev-python/hpack-5.0.0
-		>=dev-python/Faker-8.0.0
+		>=dev-python/faker-8.0.0
 		>=dev-python/mypy-0.812
 		>=dev-python/pytest-aiohttp-0.3.0
 		>=dev-python/aioresponses-0.7.4

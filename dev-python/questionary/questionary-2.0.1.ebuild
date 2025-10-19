@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
-PYTHON_COMPAT=( python3_{8..11} )
+PYTHON_COMPAT=( python3_{8..12} )
 
 inherit distutils-r1
 
@@ -14,13 +14,13 @@ SRC_URI="https://github.com/tmbo/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.ta
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 
 IUSE="ignore_issue1726"
 
 RDEPEND="
 	>=dev-python/prompt-toolkit-2.0.0[${PYTHON_USEDEP}]
-	!ignore_issue1726? ( <=dev-python/prompt-toolkit-3.0.36[${PYTHON_USEDEP}] )
+	!ignore_issue1726? ( <=dev-python/prompt-toolkit-3.0.36-r9999[${PYTHON_USEDEP}] )
 	"
 
 distutils_enable_tests pytest

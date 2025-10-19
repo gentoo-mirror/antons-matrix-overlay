@@ -1,24 +1,29 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( pypy3 python3_{7..11} )
 PYTHON_REQ_USE="sqlite?"
 
-inherit distutils-r1 multiprocessing optfeature
+DISTUTILS_USE_PEP517="setuptools"
+PYPI_PN="SQLAlchemy"
+inherit distutils-r1 multiprocessing optfeature pypi
 
-MY_PN="SQLAlchemy"
-MY_P="${MY_PN}-${PV/_beta/b}"
+#MY_PN="SQLAlchemy"
+#MY_PV="${PV/_beta/b}"
+#MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="Python SQL toolkit and Object Relational Mapper"
 HOMEPAGE="https://www.sqlalchemy.org/ https://pypi.org/project/SQLAlchemy/"
-SRC_URI="mirror://pypi/${MY_P:0:1}/${MY_PN}/${MY_P}.tar.gz"
-S="${WORKDIR}/${MY_P}"
+#SRC_URI="mirror://pypi/${MY_P:0:1}/${MY_PN}/${MY_P}.tar.gz"
+#SRC_URI="$(pypi_sdist_url "${MY_PN}" "${MY_PV}")"
+#S="${WORKDIR}/${MY_P}"
+SRC_URI="$(pypi_sdist_url --no-normalize)"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~mips ppc ppc64 ~s390 sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
+KEYWORDS="~amd64"
 IUSE="examples +sqlite test"
 
 # Use pytest-xdist to speed up tests

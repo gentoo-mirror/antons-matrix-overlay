@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{9..13} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
@@ -26,7 +26,7 @@ RDEPEND="
 "
 BDEPEND="test? (
 	dev-python/aspectlib[${PYTHON_USEDEP}]
-	dev-python/elasticsearch-py[${PYTHON_USEDEP}]
+	dev-python/elasticsearch[${PYTHON_USEDEP}]
 	dev-python/freezegun[${PYTHON_USEDEP}]
 	dev-python/hunter[${PYTHON_USEDEP}]
 	dev-python/pygal[${PYTHON_USEDEP}]

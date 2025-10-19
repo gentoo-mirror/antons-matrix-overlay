@@ -1,2 +1,63 @@
-# Occasionally fails to start after an upgrade from a previous version. The cause is a new version of NATS. Use dendrite-0.13.1_p20230706 instead, which reverted the NATS version.
-=net-matrix/dendrite-0.13.1
+# Bit-rotten ebuild. Please, use net-im/maubot::guru.
+net-matrix/maubot
+
+# I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
+# install plugins as appropriate for their setup.
+net-matrix/maubot-github-bin
+
+# I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
+# install plugins as appropriate for their setup.
+net-matrix/maubot-reminder-bin
+
+# I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
+# install plugins as appropriate for their setup.
+net-matrix/maubot-tex
+
+# I'm not maintaining this ebuild anymore. Please, use net-im/maubot::guru and
+# install plugins as appropriate for their setup.
+net-matrix/maubot-rss-bin
+
+# I'm not maintaining the ebuild anymore, please use the version from ::guru.
+dev-python/python-olm
+
+# Now available in ::gentoo.
+dev-libs/olm
+
+# Unmaintained ebuild, no dependencies left.
+dev-python/aiosqlite
+
+# Unmaintained ebuild, no unmasked dependencies.
+dev-python/pytest-benchmark
+
+# Unmaintained ebuild, no unmasked dependencies.
+dev-python/aspectlib
+
+# Unmaintained. Use net-im/mautrix-meta::guru instead.
+net-matrix/mautrix-facebook
+
+# No unmasked dependencies left.
+dev-python/asyncpg
+
+# Unmaintained ebuild, please, use the ::guru version.
+dev-python/mautrix
+
+# Unmaintained, no reverse dependencies.
+dev-python/questionary
+
+# Unmaintained ebuild, no unmasked reverse dependencies, up-to-date version available in ::gentoo.
+dev-python/prompt-toolkit
+
+# Unmaintained ebuild, no unmasked reverse dependencies.
+dev-python/pytest-flake8
+
+# Unless somebody complains, I don't plan to maintain this ebuild. Has no reverse dependencies any more.
+dev-python/pytest-isort
+
+# Unmaintained ebuild, no reverse dependencies.
+dev-python/sqlalchemy
+
+# Unmaintained ebuild, use the version from ::guru.
+dev-python/unpaddedbase64
+
+# Unmaintained ebuild, also skype is dead.
+net-matrix/matrix-skype
